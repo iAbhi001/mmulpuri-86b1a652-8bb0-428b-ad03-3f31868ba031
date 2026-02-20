@@ -1,10 +1,16 @@
-import {
-  ApplicationConfig,
-  provideBrowserGlobalErrorListeners,
-} from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import { appRoutes } from './app.routes';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+
+import { appRoutes } from './app.routes'; 
+// Ensure this path is exactly './auth/auth.interceptor' as seen in your tree
+import { authInterceptor } from './auth/auth.interceptor'; 
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideBrowserGlobalErrorListeners(), provideRouter(appRoutes)],
+  providers: [
+    provideRouter(appRoutes),
+    provideHttpClient(
+      withInterceptors([authInterceptor])
+    ),
+  ],
 };

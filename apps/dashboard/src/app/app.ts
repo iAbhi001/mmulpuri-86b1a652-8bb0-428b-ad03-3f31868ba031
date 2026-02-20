@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
 
 @Component({
-  imports: [NxWelcome, RouterModule],
+  standalone: true,
+  imports: [RouterModule],
   selector: 'app-root',
-  templateUrl: './app.html',
-  styleUrl: './app.scss',
+  // This template tells Angular where to swap your Login and Task pages
+  template: '<router-outlet></router-outlet>', 
 })
-export class App {
-  protected title = 'dashboard';
-}
+export class App {}
