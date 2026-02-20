@@ -1,0 +1,9 @@
+{
+  "name": "@mmulpuri-86b1a652-8bb0-428b-ad03-3f31868ba031/auth",
+  "version": "0.0.1",
+  "private": true,
+  "type": "commonjs",
+  "main": "./index.cjs",
+  "types": "./index.d.ts",
+  "dependencies": {}
+}
